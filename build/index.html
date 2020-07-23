@@ -17,20 +17,10 @@
 
 
 <script>
-  const {Pool,Client}= require('pg')
-const connectionString ='postgres://nknskzkksjrswn:3db4897d9bb441379bf69eb55e105e6f200aa316b9d762379c3285abb13d2493@ec2-18-211-48-247.compute-1.amazonaws.com:5432/d5nviljvls6e8v';
 
-const client = new client({
-    connectionString:connectionString,
-})
-
-client.connect()
-
-client.query('set transaction read write; CREATE TABLE Productos (ID int,Codigo varchar(255), Nombre varchar(255), Descripcion varchar(255), Cantidad int, Categoria varchar(255), Proveedor varchar(255), LinkFoto varchar(255), Costo int, Margen int, Precio int, Mostrar int);commit;',(err,res)=>{
+client.query('CREATE TABLE Productos (ID int, Codigo varchar(255), Nombre varchar(255), Descripcion varchar(255), Cantidad int, Categoria varchar(255), Proveedor varchar(255), LinkFoto varchar(255), Costo int, Margen int, Precio int, Mostrar int);',(err,res)=>{
     console.log(err,res)
 })
-
-
   var selected=0;
   function Seleccionar(selected){
     //Quito el active de todos los ids
@@ -366,6 +356,7 @@ client.query('set transaction read write; CREATE TABLE Productos (ID int,Codigo 
     <script>window.jQuery || document.write('<script src="js/jquery-slim.min.js"><\/script>')</script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="Server/database.js"></script>
 
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
