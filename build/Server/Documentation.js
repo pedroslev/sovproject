@@ -24,3 +24,6 @@ commit;
 set transaction read write;
 INSERT INTO Productos (ID, Codigo, Nombre, Descripcion, Cantidad, Categoria, Proveedor, LinkFoto, Costo, Margen, Precio, Mostrar)
 VALUES ('1', 'ABC', 'Test', 'Esto es un test', '10', 'testing', 'haze', 'NULL', '10', '100', '20', '1');
+commit;
+
+hola esto es una prueba de build
