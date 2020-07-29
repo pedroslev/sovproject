@@ -18,11 +18,8 @@
 </head>
 
 
-<script>
 
-client.query('CREATE TABLE Productos (ID int, Codigo varchar(255), Nombre varchar(255), Descripcion varchar(255), Cantidad int, Categoria varchar(255), Proveedor varchar(255), LinkFoto varchar(255), Costo int, Margen int, Precio int, Mostrar int);',(err,res)=>{
-    console.log(err,res)
-})
+<script>
   var selected=0;
   function Seleccionar(selected){
     //Quito el active de todos los ids
@@ -107,6 +104,17 @@ client.query('CREATE TABLE Productos (ID int, Codigo varchar(255), Nombre varcha
     default:
     }
   }
+
+
+  //database
+  <?php
+  $result = pg_query($db_connection, "SELECT * FROM Productos");
+    
+    ?>
+
+    var resultado = $result;
+        console.log(resultado);
+        
   </script>
   
 
